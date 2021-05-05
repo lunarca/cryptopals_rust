@@ -21,6 +21,7 @@ fn main() {
         1 => {
             match challenge {
                 1 => challenges::stage1::challenge1::run(),
+                2 => challenges::stage1::challenge2::run(),
                 _ => println!("Nothing available Set Challenge {}", challenge),
             }
         },
