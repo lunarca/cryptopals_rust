@@ -22,9 +22,14 @@ fn main() {
             match challenge {
                 1 => challenges::stage1::challenge1::run(),
                 2 => challenges::stage1::challenge2::run(),
-                _ => println!("Nothing available Set Challenge {}", challenge),
-            }
+                _ => challenge_select_fail(1, challenge),
+            };
         },
-        _ => { println!("No challenges available from set {}", set); },
+        _ => println!("Nothing for set {}", set),
     }
+}
+
+fn challenge_select_fail(set: i32, challenge: i32) -> bool {
+    println!("Nothing available Set {} Challenge {}", set, challenge);
+    false
 }

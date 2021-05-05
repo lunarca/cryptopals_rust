@@ -1,7 +1,7 @@
 use hex;
 use crate::utils::xor;
 
-pub fn run() {
+pub fn run() -> bool {
   let input_1_str = String::from("1c0111001f010100061a024b53535009181c");
   let input_2_str = String::from("686974207468652062756c6c277320657965");
 
@@ -20,9 +20,11 @@ pub fn run() {
     Ok(value) => {
       let result_str = hex::encode(&value);
       println!("XOR'd value: {}", result_str);
-      println!("Success: {}", value == output_challenge_bytes);
+      let success = value == output_challenge_bytes;
+      println!("Success: {}", success);
+      success
     },
 
-    Err(error) => { println!("Error: {}", error)}
+    Err(error) => { println!("Error: {}", error); false }
   }
 }
