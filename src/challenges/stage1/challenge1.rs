@@ -23,3 +23,13 @@ pub fn run() -> bool {
     }
   }
 }
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+  
+  #[test]
+  fn one_one() {
+    assert_eq!(run(), true);
+  }
+}

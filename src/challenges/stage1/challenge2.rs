@@ -28,3 +28,13 @@ pub fn run() -> bool {
     Err(error) => { println!("Error: {}", error); false }
   }
 }
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+  
+  #[test]
+  fn one_two() {
+    assert_eq!(run(), true);
+  }
+}
