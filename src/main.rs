@@ -22,6 +22,7 @@ fn main() {
             match challenge {
                 1 => challenges::stage1::challenge1::run(),
                 2 => challenges::stage1::challenge2::run(),
+                3 => challenges::stage1::challenge3::run(),
                 _ => challenge_select_fail(1, challenge),
             };
         },
