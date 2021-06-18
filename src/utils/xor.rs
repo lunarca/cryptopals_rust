@@ -47,3 +47,14 @@ pub fn crack_single_byte_xor(ciphertext: &Vec<u8>) -> Option<(u8, Vec<u8>, i32)>
 
   return results.pop()
 }
+
+
+fn find_fixed_byte_xor(possible_ciphertexts: Vec<Vec<u8>>) -> Option<(u8, Vec<u8>, i32)> {
+  let mut cracked_results: Vec<(u8, Vec<u8>, i32)> = possible_ciphertexts.iter()
+    .filter_map(crack_single_byte_xor)
+    .collect();
+
+  cracked_results.sort_by(|a, b| a.2.cmp(&b.2));
+  
+  return cracked_results.pop()
+}
