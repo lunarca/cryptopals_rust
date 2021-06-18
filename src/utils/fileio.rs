@@ -23,7 +23,6 @@ fn decode_line(line: Result<String, std::io::Error>) -> Option<Vec<u8>> {
 }
 
 pub fn read_file_lines(filename: &Path) -> io::Lines<io::BufReader<File>> {
-  let mut contents = String::new();
   let display = filename.display();
 
   let file = match File::open(filename) {
